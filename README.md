@@ -35,14 +35,14 @@ astar-pathfinding/
 ```mermaid
 flowchart TD
     A[Start] --> B[Initialize open set with start node]
-    B --> C{Open set empty?}
+    B --> C{"Open set empty?"}
     C -->|Yes| D[No path found]
     C -->|No| E[Pop node with lowest f-score]
-    E --> F{Is this the goal?}
+    E --> F{"Is this the goal?"}
     F -->|Yes| G[Reconstruct and draw path]
     F -->|No| H[Move node to closed set]
     H --> I[For each neighbor]
-    I --> J{Walkable and not in closed?}
+    I --> J{"Walkable and not in closed?"}
     J -->|No| I
     J --> K[Calculate g, h, f scores]
     K --> L[Add to open set priority queue]
@@ -70,7 +70,7 @@ The open set is a custom doubly-linked list sorted by `f(n)` ascending. The algo
 ```mermaid
 flowchart LR
     subgraph "Priority Queue (Sorted by f-value)"
-        A[Node: f=5] --- B[Node: f=8] --- C[Node: f=12] --- D[Node: f=15]
+        A["Node: f=5"] --- B["Node: f=8"] --- C["Node: f=12"] --- D["Node: f=15"]
     end
     style A fill:#4CAF50
     style B fill:#8BC34A
